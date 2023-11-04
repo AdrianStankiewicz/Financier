@@ -11,7 +11,7 @@ Run MongoDB:
 docker run -d \
 	--name financier-mongo \
 	--env-file ./enviromental.txt \
-	mongo
+	mongo:5.0.22
 ```
 Run GetRates:
 ```bash

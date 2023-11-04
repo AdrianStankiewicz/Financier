@@ -1,5 +1,5 @@
 # ---------- SET BASE IMAGE ----------
-FROM python:latest
+FROM python:3.12
 
 # ---------- SET WORKING DIRECTORY ----------
 WORKDIR /app
