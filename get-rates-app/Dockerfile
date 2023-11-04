@@ -14,4 +14,4 @@ RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 COPY ./ /code
 
 #
-CMD ["python", "/code/rates.py"]
+CMD ["python", "/code/main.py"]

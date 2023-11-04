@@ -9,7 +9,7 @@ COPY requirements.txt /app/
 RUN pip install -r requirements.txt
 
 # ---------- COPY SAVED MODEL TO CONTAINER ----------
-COPY Financier-approver.pkl /app/
+COPY package/Financier-approver.pkl /app/package/
 
 # ---------- COPY CODEBASE TO CONTAINER ----------
 COPY main.py /app/
