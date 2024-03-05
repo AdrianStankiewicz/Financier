@@ -11,13 +11,14 @@ Run MongoDB:
 docker run -d \
 	--name financier-mongo \
 	--env-file ./enviromental.txt \
-	mongo:5.0.22
+	-v mongodbdata:/data/db \
+	mongo:7.0.6
 ```
 Run GetRates:
 ```bash
 docker build -t get-rates ./get-rates-app/
-docker run -d --rm 				\
-	--name financier-get-rates 	\
+docker run -d --rm \
+	--name financier-get-rates \
 	--env-file ./enviromental.txt \
 	--env-file ./get-rates-app/enviromental.txt \
 	get-rates
@@ -44,3 +45,14 @@ Login to MongoDB:
 ```bash
 mongosh --username <username> --password <password>
 ```
+
+#### Importat details:
+Created volume to make data persistant inside MongoDB:
+```bash
+docker volume create mongodbdata
+```
+Added `financier-get-rates.sh` to /etc/cron.daily/
+
+======
+Used icons:
+<a href="https://www.flaticon.com/" title="currency icons">Icons created by Freepik - Flaticon</a>m 
