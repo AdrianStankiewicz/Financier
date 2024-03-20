@@ -23,6 +23,14 @@ docker run -d --rm \
 	--env-file ./get-rates-app/enviromental.txt \
 	get-rates
 ```
+Run GetInflation:
+```bash
+docker build -t get-inflation . # run inside script folder
+docker run -d --rm \
+	--name financier-get-inflation \
+	--env-file ./enviromental.txt \
+	get-inflation
+```
 Run LoanProphet:
 ```bash
 docker build -t loan-prophet ./approve-model/
@@ -53,6 +61,8 @@ docker volume create mongodbdata
 ```
 Added `financier-get-rates.sh` to /etc/cron.daily/
 
-======
+___  
 Used icons:
-<a href="https://www.flaticon.com/" title="currency icons">Icons created by Freepik - Flaticon</a>m 
+<a href="https://www.flaticon.com/" title="currency icons">Icons created by Freepik - Flaticon</a>  
+Inflation data:
+<a href="https://en.wikipedia.org/wiki/ISO_4217">Wikipedia data</a>
