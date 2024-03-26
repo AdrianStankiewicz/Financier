@@ -1,0 +1,21 @@
+div.table-striped:nth-child(2n) {
+  background-color: cyan;
+}
+div.table-striped:nth-child(2n-1) {
+  background-color: yellow;
+}
+
+div.flex:nth-child(2n) {
+  border-left: 1px solid black;
+  border-right: 3px solid black;
+}
+div.flex:nth-child(2n-1) {
+  border-right: 1px solid black;
+  border-left: 3px solid black;
+}
+
+#currency_id {
+  font-size: 20px;
+  width: 200px;
+  text-align: center;
+}

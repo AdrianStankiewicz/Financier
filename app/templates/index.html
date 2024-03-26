@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include 'partials/head' %}
+
+    <script src="scripts/index.js"></script>
+</head>
+
+<body class="w-screen flex flex-col justify-center">
+
+    {% include 'partials/navbar' %}
+
+    <div class="grid grid-cols-2 mt-10 xl:grid-cols-5 xl:mt-32">
+
+        <div class="col-start-1 px-12 xl:col-start-2 flex justify-center xl:mb-20">
+            <a href="./calculator">
+                <img id="calculator" src="images/calculator.png" alt="">
+                <p class="text-center py-5">KALKULATOR KREDYTU</p>
+            </a>
+        </div>
+
+        <div class="px-12  flex justify-center">
+            <a href="/loan_checker">
+                <img id="question" src="images/question.png" alt="">
+                <p class="text-center py-5">SPRAWDŹ CZY DOSTANIESZ KREDYT</p>
+            </a>
+        </div>
+
+        <div class="px-12  flex justify-center">
+            <a href="/exchange">
+                <img id="exchange" src="images/exchange.png" alt="">
+                <p class="text-center py-5">WYMIANA WALUTY</p>
+            </a>
+        </div>
+
+        <div class="px-12 xl:col-start-2 flex justify-center">
+            <a href="/currency_list">
+                <img id="list" src="images/list.png" alt="">
+                <p class="text-center py-5">KURSY WALUT</p>
+            </a>
+        </div>
+
+        <div class="px-12  flex justify-center">
+            <a href="/currency_history">
+                <img id="history" src="images/history.png" alt="">
+                <p class="text-center py-5">HISTORYCZNY KURS WALUT</p>
+            </a>
+        </div>
+
+        <div class="px-12  flex justify-center">
+            <a href="/currency_inflation">
+                <img id="inflation" src="images/inflation.png" alt="">
+                <p class="text-center py-5">INFLACJA</p>
+            </a>
+        </div>
+
+    </div>
+</body>
+
+</html>

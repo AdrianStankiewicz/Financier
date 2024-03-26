@@ -14,6 +14,9 @@ COPY package/Financier-approver.pkl /app/package/
 # ---------- COPY CODEBASE TO CONTAINER ----------
 COPY main.py /app/
 
+# ---------- COPY TEMPLATES TO CONTAINER ----------
+COPY templates /app/templates
+
 # ---------- EXPOSE CONTAINER PORTS TO THE WORLD ----------
 EXPOSE 80
 

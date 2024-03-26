@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'partials/head' %}
+</head>
+<body>
+    {% include 'partials/navbar' %}
+
+    <section class="flex flex-col justify-center items-center w-full bg-red-800">
+        <div class="flex justify-evenly w-5/6 bg-blue-800">
+            <span class="w-1/2 pl-6 font-bold">Waluta</span>
+            <span class="w-1/4 text-center font-bold">Dzisiaj</span>
+            <span class="w-1/4 text-center font-bold">Wczoraj</span>
+        </div>
+    </section>
+    <section class="flex flex-col justify-center items-center w-full bg-green-800">
+        <div class="flex w-5/6 bg-yellow-400">
+            <div class="flex items-center w-1/2">
+                <span class="pl-6 font-semibold">USD</span>
+                <span class="pl-2 text-xs">EUR</span>
+            </div>
+            <span class="flex justify-center items-center w-1/4">0.90</span>
+            <span class="flex justify-center items-center w-1/4">0.91</span>
+        </div>
+        <div class="flex w-5/6 bg-blue-400">
+            <div class="flex items-center w-1/2">
+                <span class="pl-6 font-semibold">CHF</span>
+                <span class="pl-2 text-xs">EUR</span>
+            </div>
+            <span class="flex justify-center items-center w-1/4">1.15</span>
+            <span class="flex justify-center items-center w-1/4">1.14</span>
+        </div>
+        <div class="flex w-5/6 bg-yellow-400">
+            <div class="flex items-center w-1/2">
+                <span class="pl-6 font-semibold">GBP</span>
+                <span class="pl-2 text-xs">EUR</span>
+            </div>
+            <span class="flex justify-center items-center w-1/4">1.20</span>
+            <span class="flex justify-center items-center w-1/4">1.22</span>
+        </div>
+        <div class="flex w-5/6 bg-blue-400">
+            <div class="flex items-center w-1/2">
+                <span class="pl-6 font-semibold">PLN</span>
+                <span class="pl-2 text-xs">EUR</span>
+            </div>
+            <span class="flex justify-center items-center w-1/4">0.22</span>
+            <span class="flex justify-center items-center w-1/4">0.215</span>
+        </div>
+    </section>
+</body>
+</html>
