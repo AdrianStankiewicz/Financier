@@ -5,5 +5,190 @@
 </head>
 <body>
     {% include 'partials/navbar' %}
+
+    <div class="flex flex-col items-center justify-center w-full">
+        <div class="flex flex-col justify-center items-center w-5/6 xl:w-1/2">
+            <span class="pt-10 text-5xl font-bold text-center text-gray-800 xl:text-5xl">Credit Score Simulator</span>
+            <span class="pt-5 text-md text-gray-800 text-center xl:text-xl">You may not have a crystal ball, but this is the next best thing! A lot of reasons can change your score, and this simulator can help you explore some of them.</span>
+        </div>
+        <hr class="w-1/2 h-1 rounded-xl my-8 bg-gray-500 border-0">
+        <form hx-get="/loan_check" hx-target="#result" hx-swap="innerHTML" class="flex flex-col w-5/6 xl:w-1/3">
+            <section class="flex flex-col justify-center items-center w-full">
+                <span class="pt-5  pb-2 text-xl font-semibold text-center">Choose your gender</span>
+                <div class="grid w-full grid-cols-2 gap-2 rounded-xl bg-gray-200 p-2">
+                    <div>
+                        <input type="radio" name="optionGender" id="male" value="1" class="peer hidden" checked>
+                        <label for="male"
+                            class="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-gray-500 peer-checked:font-bold peer-checked:text-white">Male</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="optionGender" id="female" value="2" class="peer hidden">
+                        <label for="female"
+                            class="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-gray-500 peer-checked:font-bold peer-checked:text-white">Female</label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="flex flex-col justify-center items-center">
+                <span class="pt-10  pb-2 text-xl font-semibold text-center">Are you married?</span>
+                <div class="grid w-full grid-cols-2 gap-2 rounded-xl bg-gray-200 p-2">
+                    <div>
+                        <input type="radio" name="optionMarried" id="yesMarried" value="1" class="peer hidden" checked>
+                        <label for="yesMarried"
+                            class="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-gray-500 peer-checked:font-bold peer-checked:text-white">Yes</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="optionMarried" id="noMarried" value="2" class="peer hidden">
+                        <label for="noMarried"
+                            class="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-gray-500 peer-checked:font-bold peer-checked:text-white">No</label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="flex flex-col justify-center items-center">
+                <span class="pt-10  pb-2 text-xl font-semibold text-center">How many dependents do you have?</span>
+                <div class="grid w-full grid-cols-4 gap-2 rounded-xl bg-gray-200 p-2">
+                    <div>
+                        <input type="radio" name="optionDependents" id="1" value="0" class="peer hidden">
+                        <label for="1"
+                            class="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-gray-500 peer-checked:font-bold peer-checked:text-white">0</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="optionDependents" id="2" value="1" class="peer hidden" checked>
+                        <label for="2"
+                            class="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-gray-500 peer-checked:font-bold peer-checked:text-white">1</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="optionDependents" id="3" value="2" class="peer hidden">
+                        <label for="3"
+                            class="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-gray-500 peer-checked:font-bold peer-checked:text-white">2</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="optionDependents" id="4" value="3+" class="peer hidden">
+                        <label for="4"
+                            class="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-gray-500 peer-checked:font-bold peer-checked:text-white">3+</label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="flex flex-col justify-center items-center">
+                <span class="pt-10  pb-2 text-xl font-semibold text-center">Have you graduated University?</span>
+                <div class="grid w-full grid-cols-2 gap-2 rounded-xl bg-gray-200 p-2">
+                    <div>
+                        <input type="radio" name="optionEducation" id="graduate" value="Graduate" class="peer hidden"
+                            checked>
+                        <label for="graduate"
+                            class="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-gray-500 peer-checked:font-bold peer-checked:text-white">Graduate</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="optionEducation" id="notgraduate" value="NotGraduate"
+                            class="peer hidden">
+                        <label for="notgraduate"
+                            class="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-gray-500 peer-checked:font-bold peer-checked:text-white">Not
+                            Graduate</label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="flex flex-col justify-center items-center">
+                <span class="pt-10  pb-2 text-xl font-semibold text-center">Are you self-employed?</span>
+                <div class="grid w-full grid-cols-2 gap-2 rounded-xl bg-gray-200 p-2">
+                    <div>
+                        <input type="radio" name="optionSelfEmployed" id="selfEmployed" value="Yes" class="peer hidden"
+                            checked>
+                        <label for="selfEmployed"
+                            class="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-gray-500 peer-checked:font-bold peer-checked:text-white">Yes</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="optionSelfEmployed" id="notSelfEmployed" value="No"
+                            class="peer hidden">
+                        <label for="notSelfEmployed"
+                            class="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-gray-500 peer-checked:font-bold peer-checked:text-white">No</label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="flex flex-col justify-center items-center">
+                <span class="pt-10  pb-2 text-xl font-semibold text-center">How much do you earn monthly?</span>
+                <div class="flex justify-center items-center w-full rounded-xl bg-gray-200 p-2">
+                    <input type="number" name="ApplicantIncome" id="ApplicantIncome" placeholder="1000€" class="w-full rounded-lg p-1 text-center text-lg [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+                </div>
+            </section>
+
+            <section class="flex flex-col justify-center items-center">
+                <span class="pt-10  pb-2 text-xl font-semibold text-center">How much do your coapplicant earn monthly?</span>
+                <div class="flex justify-center items-center w-full rounded-xl bg-gray-200 p-2">
+                    <input type="number" name="CoapplicantIncome" id="CoapplicantIncome" placeholder="1000€" class="w-full rounded-lg p-1 text-center text-lg [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+                </div>
+            </section>
+
+            <section class="flex flex-col justify-center items-center">
+                <span class="pt-10  pb-2 text-xl font-semibold text-center">How much do you want to borrow?</span>
+                <div class="flex justify-center items-center w-full rounded-xl bg-gray-200 p-2">
+                    <input type="number" name="LoanAmount" id="LoanAmount" placeholder="100 000€" class="w-full rounded-lg p-1 text-center text-lg [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+                </div>
+            </section>
+
+            <section class="flex flex-col justify-center items-center">
+                <span class="pt-10  pb-2 text-xl font-semibold text-center">How long would you want the loan to be (in months)?</span>
+                <div class="flex justify-center items-center w-full rounded-xl bg-gray-200 p-2">
+                    <input type="number" name="Loan_Amount_Term" id="Loan_Amount_Term" placeholder="240" class="w-full rounded-lg p-1 text-center text-lg [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+                </div>
+            </section>
+
+            <section class="flex flex-col justify-center items-center">
+                <span class="pt-10  pb-2 text-xl font-semibold text-center">Did you ever have any credit cards or loans?</span>
+                <div class="grid w-full grid-cols-2 gap-2 rounded-xl bg-gray-200 p-2">
+                    <div>
+                        <input type="radio" name="optionCreditHistory" id="creditHistory" value="1" class="peer hidden"
+                            checked>
+                        <label for="creditHistory"
+                            class="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-gray-500 peer-checked:font-bold peer-checked:text-white">Yes</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="optionCreditHistory" id="noCreditHistory" value="0"
+                            class="peer hidden">
+                        <label for="noCreditHistory"
+                            class="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-gray-500 peer-checked:font-bold peer-checked:text-white">No</label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="flex flex-col justify-center items-center">
+                <span class="pt-10  pb-2 text-xl font-semibold text-center">Which area are you considering for the property?</span>
+                <div class="grid w-full grid-cols-3 gap-2 rounded-xl bg-gray-200 p-2">
+                    <div>
+                        <input type="radio" name="optionPropertyArea" id="urban" value="Urban" class="peer hidden"
+                            checked>
+                        <label for="urban"
+                            class="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-gray-500 peer-checked:font-bold peer-checked:text-white">Urban</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="optionPropertyArea" id="semiurban" value="Semiurban"
+                            class="peer hidden">
+                        <label for="semiurban"
+                            class="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-gray-500 peer-checked:font-bold peer-checked:text-white">Semiurban</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="optionPropertyArea" id="rural" value="Rural"
+                            class="peer hidden">
+                        <label for="rural"
+                            class="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-gray-500 peer-checked:font-bold peer-checked:text-white">Rural</label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="flex flex-col justify-center items-center">
+                <hr class="w-3/4 h-1 rounded-xl my-10 bg-gray-500 border-0">
+                <span class="pb-5 text-2xl font-bold text-center text-gray-800">Run the simulation!</span>
+                    <button type="submit" class="w-full h-full bg-gray-500 hover:bg-gray-400 p-2 rounded-lg text-white font-bold">Check the result</button>
+            </section>
+        </form>
+
+        <section id="result" class="flex flex-col justify-center items-center w-5/6 mt-10 mb-32">
+            
+        </section>
+    </div>
+    
 </body>
 </html>
