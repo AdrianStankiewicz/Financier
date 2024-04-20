@@ -2,50 +2,51 @@
 <html lang="en">
 <head>
     {% include 'partials/head' %}
+
+    <link rel="stylesheet" href="styles/list.css">
 </head>
 <body>
     {% include 'partials/navbar' %}
 
-    <section class="flex flex-col justify-center items-center w-full bg-red-800">
-        <div class="flex justify-evenly w-5/6 bg-blue-800">
-            <span class="w-1/2 pl-6 font-bold">Waluta</span>
-            <span class="w-1/4 text-center font-bold">Dzisiaj</span>
-            <span class="w-1/4 text-center font-bold">Wczoraj</span>
-        </div>
-    </section>
-    <section class="flex flex-col justify-center items-center w-full bg-green-800">
-        <div class="flex w-5/6 bg-yellow-400">
-            <div class="flex items-center w-1/2">
-                <span class="pl-6 font-semibold">USD</span>
-                <span class="pl-2 text-xs">EUR</span>
+    <div class="flex flex-col justify-center items-center w-full">
+        <section class="flex flex-col justify-center items-center w-5/6 pt-5 xl:w-3/4">
+            <span class="pt-5 text-5xl font-bold text-center text-gray-800">Daily currency rates</span>
+            <span class="pt-5 text-md text-gray-800 text-center xl:w-3/4">Welcome to our currency rates comparison! Below, you'll find today's exchange rate and the ammount it changed since yesterday for various currencies. Stay informed and make smarter financial decisions with our real-time data.</span>
+        </section>
+
+        <hr class="w-3/4 h-1 rounded-xl my-10 bg-gray-500 border-0">
+
+        <section class="flex justify-center items-center bg-gray-600 rounded-t-lg w-5/6 py-2 xl:w-2/3">
+            <div class="flex justify-center items-center text-white font-bold text-2xl h-12 w-2/5">
+                <span>Currency</span>
             </div>
-            <span class="flex justify-center items-center w-1/4">0.90</span>
-            <span class="flex justify-center items-center w-1/4">0.91</span>
-        </div>
-        <div class="flex w-5/6 bg-blue-400">
-            <div class="flex items-center w-1/2">
-                <span class="pl-6 font-semibold">CHF</span>
-                <span class="pl-2 text-xs">EUR</span>
+            <div class="flex justify-around items-center text-white font-bold text-2xl h-12 w-3/5">
+                <span>Today</span>
+                <span>Change</span>
             </div>
-            <span class="flex justify-center items-center w-1/4">1.15</span>
-            <span class="flex justify-center items-center w-1/4">1.14</span>
-        </div>
-        <div class="flex w-5/6 bg-yellow-400">
-            <div class="flex items-center w-1/2">
-                <span class="pl-6 font-semibold">GBP</span>
-                <span class="pl-2 text-xs">EUR</span>
+        </section>
+
+        <section id="result" class="flex flex-col justify-center items-center w-full">
+            {% for currency in currencies %}
+            <div class="flex items-center justify-center h-10 w-5/6 table-striped xl:w-2/3">
+                <div class="flex items-center w-2/5">
+                    <span class="text-center w-full">
+                        <span class="text-xl font-semibold">{{ currency.currency }}</span>
+                        <span class="text-xs">EUR</span>
+                    </span>
+                </div>
+                <div class="flex justify-around text-lg w-3/5">
+                    <span>{{ currency.today_rate }}</span>
+                    {% if '-' in currency.rate_change %}
+                    <span class="text-red-600">{{ currency.rate_change }}</span>
+                    {% else %}
+                    <span class="text-green-600">{{ currency.rate_change }}</span>
+                    {% endif %}
+                </div>
             </div>
-            <span class="flex justify-center items-center w-1/4">1.20</span>
-            <span class="flex justify-center items-center w-1/4">1.22</span>
-        </div>
-        <div class="flex w-5/6 bg-blue-400">
-            <div class="flex items-center w-1/2">
-                <span class="pl-6 font-semibold">PLN</span>
-                <span class="pl-2 text-xs">EUR</span>
-            </div>
-            <span class="flex justify-center items-center w-1/4">0.22</span>
-            <span class="flex justify-center items-center w-1/4">0.215</span>
-        </div>
-    </section>
+            {% endfor %}
+        </section>
+    </div>
+
 </body>
 </html>
