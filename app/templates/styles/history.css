@@ -1,21 +1,18 @@
 div.table-striped:nth-child(2n) {
-  background-color: cyan;
+  background-color: rgb(255, 255, 255);
 }
 div.table-striped:nth-child(2n-1) {
-  background-color: yellow;
+  background-color: rgb(219, 219, 221);
 }
 
 div.flex:nth-child(2n) {
-  border-left: 1px solid black;
-  border-right: 3px solid black;
+  border-left: 1px solid gray;
 }
 div.flex:nth-child(2n-1) {
-  border-right: 1px solid black;
-  border-left: 3px solid black;
+    border-right: 1px solid gray;
 }
 
 #currency_id {
-  font-size: 20px;
-  width: 200px;
-  text-align: center;
+    font-size: 20px;
+    text-align: center;
 }
