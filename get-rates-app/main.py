@@ -11,7 +11,6 @@ import os
 
 
 # ---------- CREATE CONNECTION TO DATABASE ----------
-
 mongoDB_username = os.environ['MONGO_INITDB_ROOT_USERNAME']
 mongoDB_password = os.environ['MONGO_INITDB_ROOT_PASSWORD']
 
@@ -22,7 +21,6 @@ collection  = database.Currencies
 
 
 # --------- CHECK IF DATA ALREADY EXISTS ----------
-
 today = date.today()
 
 date = today.strftime("%Y-%m-%d")
@@ -35,8 +33,6 @@ if current_data_exists is not None:
 
 
 # ---------- GET RAW CURRENCY DATA ----------
-
-
 # Variables to access API
 provider_link   = 'http://data.fixer.io/api/latest'
 access_key      = '?access_key=' + os.environ['API_ACCESS_KEY']
@@ -47,7 +43,6 @@ response = requests.get(request_link)
 
 
 # ---------- PROCESS DATA BEFORE DATABASE INSERT ----------
-
 response_dict = response.json()
 
 del response_dict['success']

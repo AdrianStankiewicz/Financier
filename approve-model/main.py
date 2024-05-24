@@ -13,7 +13,7 @@ data = pd.read_csv("model-data.csv")
 data = data.dropna(subset=["Loan_Status"])
 
 # Data preprocessing
-# Handle missing values in other columns (you may use more advanced techniques)
+# Handle missing values in other columns
 data["Dependents"].fillna("0", inplace=True)  # Fill missing values with "0"
 data["Dependents"] = data["Dependents"].str.replace("3+", "4", regex=True)  # Replace '3+' with '4'
 data["Dependents"] = data["Dependents"].str.extract('(\d+)').astype(int)  # Extract numeric part and convert to int
