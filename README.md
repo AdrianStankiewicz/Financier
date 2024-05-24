@@ -1,8 +1,13 @@
 # Financier
-### Engineering Bachelor Thesis - Application that helps with making long-term financial decisions
+## 🇬🇧 Engineering Bachelor Thesis - Web application that helps with making long-term financial decisions
+## 🇵🇱 Temat Pracy Inżynierskiej - Aplikacja webowa wspierająca podejmowanie długoterminowych dezycji finansowych
 
-## Running Procedure
-Switch docker into service
+The following application was created as a result of a Bachelor Thesis project, focusing on developing a web application that aids users in making long-term financial decisions. The project, titled "Financier," aims to provide valuable insights and tools to support financial planning and management.  
+___
+The application was finally graded as 6, which is the highest grade possible in Polish Universities that require high average grades and max score from Thesis.
+___
+# ======== Deployment process ========
+Enable Docker
 ```bash
 sudo systemctl enable docker
 ```
@@ -47,7 +52,7 @@ docker run -d \
 	--name financier-api_container \
 	financier-api
 ```
-
+___
 ## Useful snippets:
 Login to MongoDB:
 ```bash
