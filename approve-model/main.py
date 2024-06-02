@@ -16,7 +16,7 @@ data = data.dropna(subset=["Loan_Status"])
 # Handle missing values in other columns
 data["Dependents"].fillna("0", inplace=True)  # Fill missing values with "0"
 data["Dependents"] = data["Dependents"].str.replace("3+", "4", regex=True)  # Replace '3+' with '4'
-data["Dependents"] = data["Dependents"].str.extract('(\d+)').astype(int)  # Extract numeric part and convert to int
+data["Dependents"] = data["Dependents"].str.extract(r'(\d+)').astype(int)  # Extract numeric part and convert to int
 data["LoanAmount"].fillna(data["LoanAmount"].mean(), inplace=True)
 data["Loan_Amount_Term"].fillna(data["Loan_Amount_Term"].mode()[0], inplace=True)
 data["Credit_History"].fillna(1, inplace=True)
