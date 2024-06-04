@@ -1,15 +1,3 @@
-<style>
-.highlight {
-	font-weight: bold;
-	font-size: 1.5em;
-	color: lightblue;
-}
-.highlight-xl {
-	font-weight: bold;
-	font-size: 2.5em;
-	color: lightblue;
-}
-</style>
 # Financier
 
 ## 🇬🇧 Engineering Bachelor Thesis - Web Application for Long-Term Financial Decision-Making
@@ -17,14 +5,14 @@
 
 **Financier** is a web application developed as part of my Bachelor Thesis, designed to assist users in making informed long-term financial decisions. This project aims to provide valuable insights and tools for effective financial planning and management.
 
-<span class="highlight">The thesis</span> based on this application was awarded the <span class="highlight">highest possible</span> grade of <span class="highlight">5</span> at Polish universities. Additionally, <span class="highlight">the defense</span> was rated <span class="highlight">5.5</span>, also the <span class="highlight">highest</span> score attainable for this stage.
+<span style="font-weight: bold;font-size: 1.5em;color: lightblue;">The thesis</span> based on this application was awarded the <span style="font-weight: bold;font-size: 1.5em;color: lightblue;">highest possible</span> grade of <span style="font-weight: bold;font-size: 1.5em;color: lightblue;">5</span> at Polish universities. Additionally, <span style="font-weight: bold;font-size: 1.5em;color: lightblue;">the defense</span> was rated <span style="font-weight: bold;font-size: 1.5em;color: lightblue;">5.5</span>, also the <span style="font-weight: bold;font-size: 1.5em;color: lightblue;">highest</span> score attainable for this stage.
 
-I <span class="highlight">graduated with distinction</span>, achieving an overall grade of <span class="highlight-xl">6</span>.
+I <span style="font-weight: bold;font-size: 1.5em;color: lightblue;">graduated with distinction</span>, achieving an overall grade of <span style="font-weight: bold;font-size: 2.5em;color: lightblue;">6</span>.
 ___
 # Development process
 ## Current stage
 I decided to develop the app more in order to learn more about DevOps and CI-CD concepts. Hopefully my resolve will lead me to extending the app into fully automatic CI-CD pipeline, but the current goal is:
-- Organising loosely-connected containers using <span class="highlight">docker compose</span> 
+- Organising loosely-connected containers using <span style="font-weight: bold;font-size: 1.5em;color: lightblue;">docker compose</span> 
 
 ## First stage
 At the time when Financier was being submitted as part of my Engineering Thesis it was a couple of loosely connected containers with fully manual deployment process. Whole implementation looked like this:
